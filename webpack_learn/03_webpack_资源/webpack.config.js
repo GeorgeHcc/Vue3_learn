@@ -1,0 +1,27 @@
+module.exports={
+    module:{
+        rules:[
+         {
+            test:/\.(jpe?g||png|svg|gif)$/,
+            use:[
+                'file-loader'
+            ]
+         },
+         {
+            test:/\.css$/,
+            use:[
+                'style-loader',
+                'css-loader'
+            ]
+        },
+        {
+            test:/\.less$/,
+            use:[
+                'style-loader',
+                'css-loader',
+                'less-loader'
+            ]
+        }
+        ]
+    }
+}
