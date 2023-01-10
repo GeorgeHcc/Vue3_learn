@@ -1,0 +1,13 @@
+.img{
+    width:200px;
+    height:500px;
+}
+.img-bg{
+    background-image: url("../img/sbpk.png");
+    
+    background-size: contain;
+    width: 1200px;
+    height: 500px;
+    
+   
+}
