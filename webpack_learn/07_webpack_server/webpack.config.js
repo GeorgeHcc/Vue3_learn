@@ -35,10 +35,13 @@ module.exports={
                     '^/api':''//重写
                 }
             }
+        }      
+    },
+    resolve:{
+        extension:['.js','.vue','.mjs','.ts','.jsx','.tsx','.json'],//自动补齐文件后缀名
+        alias:{       //别名
+            '@':path.resolve(__dirname,'./src')
         }
-
-        
-        
     },
     module:{
         rules:[
