@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import HelloPage2 from './04_插槽/JMSlot.vue'
+import HelloPage2 from './compositionAPI/About.vue'
 
 export default {
   name: 'App',
