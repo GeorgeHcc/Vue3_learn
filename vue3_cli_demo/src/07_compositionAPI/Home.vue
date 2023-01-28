@@ -1,6 +1,6 @@
 <template>
     <div>
-        this is {{ msgs }} page
+        this is Home page,is {{ msgs }} page
     </div>
 </template>
 

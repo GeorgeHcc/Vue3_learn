@@ -5,13 +5,13 @@
     </div>
 </template>
 
-<script>
+<script >
 import Home from './Home.vue'
     export default {
         components:{Home},
         data(){
             return{
-                msg:'about page'
+                msg:"about page's inner-component "
             }
         }
     }

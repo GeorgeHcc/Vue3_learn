@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import HelloPage2 from './compositionAPI/About.vue'
+import HelloPage2 from './07_compositionAPI/About.vue'
 
 export default {
   name: 'App',
