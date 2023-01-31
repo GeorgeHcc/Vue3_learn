@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id ="app" ref="my-app">{{msg}} 
+        <button @click="test">button</button>
+    </div>
+
+    <script>
+        const app=Vue.createApp({
+            data() {
+                return{
+                     msg:'hello vue'
+                }
+           
+        },
+        methods: {
+            test(){
+                console.log(this.$refs('my-app'));
+            }
+        }
+        })
+        app.mount('#app')
+        console.log(app);
+
+
+    function Animal(...args){
+        this.name=args[0]
+        this.age=args[1];
+        this.say=function(){
+            console.log(`I am ${this.name} is ${this.age} year old`);
+        }
+    }
+    function fish(...args){
+         fish.__proto__=Animal.prototype
+        // fish.prototype.ani=Animal
+    }
+    const aa=new Animal('hema',13)
+    console.log(aa);
+
+    const yu=new fish('jiyu',2)
+    // yu.__proto__=aa                
+    // const yu=Object.create(aa)
+
+    console.log(yu);
+    </script>
+</body>
+
+</html>
