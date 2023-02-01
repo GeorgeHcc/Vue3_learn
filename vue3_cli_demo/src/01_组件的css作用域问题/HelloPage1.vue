@@ -21,7 +21,6 @@
         props:[
             'val'
         ]
-
     }
 </script>
 
