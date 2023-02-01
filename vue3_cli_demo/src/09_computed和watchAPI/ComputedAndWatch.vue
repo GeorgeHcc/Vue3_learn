@@ -13,7 +13,7 @@ import{computed,ref,reactive,watchEffect} from 'vue'
         setup(){
             let firstName=ref('George');
             let lastName=ref('Huang');
-            //computed
+            //computedAPI
             let fullName=computed({
                 get:()=>firstName.value+' '+lastName.value,
                 set(val){
