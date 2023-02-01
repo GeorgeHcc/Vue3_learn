@@ -16,7 +16,7 @@
         data(){
             return{
                 name:this.val
-            }
+            } 
         },
         props:[
             'val'
