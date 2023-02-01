@@ -25,7 +25,7 @@ import{computed,ref,reactive,watchEffect} from 'vue'
             //watchEffect的用法
             watchEffect(()=>{
                 console.log(person.age);
-            })
+            },{flush:'post'})
             return{
                 fullName,
                 person,
