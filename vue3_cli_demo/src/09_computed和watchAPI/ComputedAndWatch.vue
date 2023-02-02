@@ -8,7 +8,7 @@
 </template>
 
 <script >
-import{computed,ref,reactive,watchEffect} from 'vue'
+import{computed,ref,reactive,watch,watchEffect} from 'vue'
     export default {
         setup(){
             let firstName=ref('George');
@@ -26,6 +26,7 @@ import{computed,ref,reactive,watchEffect} from 'vue'
             watchEffect(()=>{
                 console.log(person.age);
             },{flush:'post'})
+           watch()
             return{
                 fullName,
                 person,
