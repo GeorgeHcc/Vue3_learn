@@ -15,35 +15,18 @@
     </div>
 </template>
 
-<script >
-// import{ref} from 'vue'
-import useTitle from './hooks/useTitle'
-import useCounter from './hooks/counter'
-import useMouse from './hooks/useMouse'
-import useScroll from './hooks/useScrollPosition'
-    export default {
-        setup(){
-            //在社区一般我们把自定义hooks约定使用前缀use命名
-            const {count,increment,decrement}=useCounter();
-            // let setTitle=ref('default-title')
-            let setTitle= useTitle()
-            setTimeout(() => {
-                setTitle.value='kobe'
-            }, 3000);
-            const {pageX,pageY}=useMouse()
-            const {scrollX,scrollY}=useScroll()
-            return{
-                count,
-                setTitle,
-                pageX,
-                pageY,
-                scrollX,
-                scrollY,
-                increment,
-                decrement
-            }
-        }
-    }
+<script setup>
+import{useMouse,useScroll,useCounter,useTitle} from './hooks'
+
+    //在社区一般我们把自定义hooks约定使用前缀use命名
+    const {count,increment,decrement}=useCounter();
+    let setTitle= useTitle()
+    setTimeout(() => {
+        setTitle.value='kobe'
+    }, 3000);
+    const {pageX,pageY}=useMouse()
+    const {scrollX,scrollY}=useScroll()
+
 </script>
 
 <style scoped>
