@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import HelloPage2 from './09_computed和watchAPI/Counter.vue'
+import HelloPage2 from './11_自定义指令/GlobalDirection.vue'
 
 export default {
   name: 'App',

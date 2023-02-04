@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span v-format-time>{{ 2234341421 }}</span>
+        <span v-format-time="yyyy/mm/dd">{{ 2234341421 }}</span>
     </div>
 </template>
 
