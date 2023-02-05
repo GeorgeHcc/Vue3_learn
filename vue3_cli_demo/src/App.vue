@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import HelloPage2 from './11_自定义指令/GlobalDirection.vue'
+import HelloPage2 from './12_Plugin/Test.vue'
 
 export default {
   name: 'App',
