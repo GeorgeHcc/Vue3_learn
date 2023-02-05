@@ -7,17 +7,23 @@
     <title>渲染器实现</title>
 </head>
 <body>
-    <div id="app">
+    <div id="app" >
         app
     </div>
     <script src="./render.js"></script>
     <script >
+        // document.querySelector('#app').setAttribute('style','background-color:red')
         const vnode=h('div',{className:'box'},[
             h('span',null,'hello span'),
-            h('div',{className:'child-box'},'hello vue')
+            h('div',{className:'child-box'},[
+                h('span',{className:'cbox',style:'background-color:red;'},'redbox')
+            ])
         ])
         //mount(vnode,'#app')//应该传一个DOM元素过去 ，如果传字符串过去在函数里通过变量给querySelector（）传参会报错
         mount(vnode,document.querySelector("#app"))
     </script>
+    <style>
+        
+    </style>
 </body>
 </html>
