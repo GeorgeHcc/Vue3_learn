@@ -8,7 +8,7 @@
 import {ref} from 'vue'
     export default {
         setup(){
-            let msg=ref('auto-focus input')
+            let msg=ref('auto-focus input') 
             return {
                 msg
             }
