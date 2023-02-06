@@ -84,7 +84,8 @@ const patch=(newNode,oldNode)=>{
               newChild.forEach((e)=>{
                 mount(e,el)
               })
-            // }else{
+            }
+            //else{
 
             // }
         }
