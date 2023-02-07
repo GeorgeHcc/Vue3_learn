@@ -76,9 +76,9 @@ const patch=(newNode,oldNode)=>{
         if(typeof newChild==='string'){
            if(typeof oldChild==='string'){
                if(newChild!==oldChild){
-                  el.innerHtml=newChild
+                  el.innerText=newChild
                  }
-            }else{el.innerHtml=newChild}
+            }else{el.innerText=newChild}
         }else{
            if(typeof oldChild==='string'){
               newChild.forEach((e)=>{
