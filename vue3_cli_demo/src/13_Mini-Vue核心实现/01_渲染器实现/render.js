@@ -1,5 +1,10 @@
-
-
+/**
+ * 实现Vue中通过虚拟DOM解决DOM更新
+ * @param {标签} tag 
+ * @param {属性} props 
+ * @param {子节点} children 
+ * @returns 
+ */
 const h=(tag,props,children)=>{
     //vNode->javascript 对象
     return{
