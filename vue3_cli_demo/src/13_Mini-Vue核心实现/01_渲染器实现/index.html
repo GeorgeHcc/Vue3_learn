@@ -31,9 +31,12 @@
         ])
         //mount(vnode,'#app')//应该传一个DOM元素过去 ，如果传字符串过去在函数里通过变量给querySelector（）传参会报错
         mount(vnode,document.querySelector("#app"))
+        let flag=false
         const timer=setTimeout(()=>{
             patch(newVnode,vnode)
+            flag=true
         },5000)
+        if(flag)clearTimeout(timer)
     </script>
     <style>
         
