@@ -85,9 +85,19 @@ const patch=(newNode,oldNode)=>{
                 mount(e,el)
               })
             }
-            //else{
-
-            // }
+            else{//都有子节点的情况
+            //1.前面有相同结点的元素进行patch操作
+            const commLen=Math.min(oldChild.length,newChild.length)    
+                for(let i=0;i<commLen;i++){
+                    patch(newChild[i],oldChild[i])
+                }
+            //2.newChild.length > oldChild.length
+            if(newChild.length > oldChild.length)
+                newChild.slice(oldChild.length).forEach(e=>mount(e,el))
+            //3.newChild.length < oldChild.length
+            if(newChild.length < oldChild.length)
+                oldChild.slice(newChild.length).forEach(e=>el.removeChild(e.el))
+            }
         }
     }
 }
