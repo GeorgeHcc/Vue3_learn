@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Vue</title>
+</head>
+<body>
+    <div class="app"></div>
+    <script src="./01_渲染器实现/render.js"></script>
+    <script src="./02_响应式实现/reactive.js"></script>
+    <script >
+        function createApp(rootComponent){
+            return {
+                mount(selector){
+                    const container=document.querySelector(selector);
+                    let isMounted=false;
+                    let oldNode=null;
+                
+                    watchEffect(function(){
+                        if(!isMounted){
+                            oldNode=rootComponent.render()
+                            mount(rootComponent.render(),container);
+                            isMounted=true;
+                        }else{ 
+                            const newNode=rootComponent.render();
+                            patch(newNode,oldNode);
+                            oldNode=newNode;
+                        }
+                    })
+                }
+            }
+}
+    </script>
+    <script>
+        const App={
+            data:reactive({
+                msg:'hello Mini-Vue'
+            }),
+            render(){
+                return h('span',null,`data:${this.data.msg}`)
+            }
+        }
+        createApp(App).mount('#app')
+    </script>
+</body>
+</html>

@@ -13,12 +13,10 @@ class Dep{
     constructor(){
         this.subscribers=new Set()
     }
-    addEffect(effect){
-        this.subscribers.add(effect)
-    }
+
     depend(){
         if(activeEffect){
-            this.addEffect(activeEffect)
+            this.subscribers.add(activeEffect)
         }
     }
     notify(){
@@ -55,8 +53,8 @@ function getDep(target,key){
     return dep;
 
 }
-//vue2对raw进行数据劫持
-// function reactive(raw){
+
+// function reactive(raw){//vue2对raw进行数据劫持
 //     Object.keys(raw).forEach(key=>{
 //         const dep=getDep(raw,key)
 //         let value=raw[key]
@@ -76,8 +74,8 @@ function getDep(target,key){
 //     })
 //     return raw;
 // }
-//vue3对raw劫持
-function reactive(raw){
+ 
+function reactive(raw){//vue3对raw劫持
 return new Proxy(raw,{
     get(target,key){
         const dep=getDep(target,key);
@@ -91,23 +89,30 @@ return new Proxy(raw,{
     }
 })
 }
+
+
 //测试代码
-// const dep=new Dep()
-const info=reactive({counter:100,name:'georgeH'});
-const foo=reactive({height:300})
 
-watchEffect(function doubleCounter(){
-    console.log('effect1:',info.counter*2);
-})
+// const proxy=reactive({name:'344'});//vu3
+// proxy.name=1222;
+// watchEffect(()=>{
+//     console.log(proxy);
+// })
+// const info=reactive({counter:100,name:'georgeH'});
+// const foo=reactive({height:300})
 
-watchEffect(function powerCounter(){
-    console.log('effect2:',info.counter**2,info.name);
-})
+// watchEffect(function doubleCounter(){
+//     console.log('effect1:',info.counter*2);
+// })
 
-watchEffect(function powerCounter(){
-    console.log('effect3:',foo.height);
-})
+// watchEffect(function powerCounter(){
+//     console.log('effect2:',info.counter**2,info.name);
+// })
 
-info.counter++;
-info.name='kobe'
-foo.height=100
+// watchEffect(function powerCounter(){
+//     console.log('effect3:',foo.height);
+// })
+
+// info.counter++;
+// info.name='kobe'
+// foo.height=100
