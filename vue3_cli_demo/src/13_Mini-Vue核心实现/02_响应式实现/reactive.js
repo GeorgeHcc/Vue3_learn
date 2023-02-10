@@ -101,7 +101,7 @@ watchEffect(function doubleCounter(){
 })
 
 watchEffect(function powerCounter(){
-    console.log('effect2:',info.counter**2);
+    console.log('effect2:',info.counter**2,info.name);
 })
 
 watchEffect(function powerCounter(){
