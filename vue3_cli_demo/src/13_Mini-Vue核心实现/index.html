@@ -7,18 +7,20 @@
     <title>Mini-Vue</title>
 </head>
 <body>
-    <div class="app"></div>
+    <div id="app"></div>
     <script src="./01_渲染器实现/render.js"></script>
     <script src="./02_响应式实现/reactive.js"></script>
     <script >
         function createApp(rootComponent){
             return {
+                
                 mount(selector){
                     const container=document.querySelector(selector);
                     let isMounted=false;
                     let oldNode=null;
                 
                     watchEffect(function(){
+                        
                         if(!isMounted){
                             oldNode=rootComponent.render()
                             mount(rootComponent.render(),container);
@@ -32,17 +34,18 @@
                 }
             }
 }
-    </script>
-    <script>
-        const App={
+const App={
             data:reactive({
                 msg:'hello Mini-Vue'
             }),
             render(){
-                return h('span',null,`data:${this.data.msg}`)
+                return h('span',{className:'tt'},`data:${this.data.msg}`)
             }
         }
         createApp(App).mount('#app')
+    </script>
+    <script>
+        
     </script>
 </body>
 </html>

@@ -37,11 +37,11 @@ const mount=(vNode,container)=>{
         vNode.children.forEach((e)=>{
             mount(e,el)
         })
-        container.appendChild(el)
+       
     }else{//没有子节点
         el.innerText=vNode.children
     }
-    
+     container.appendChild(el)
  
 }
 
